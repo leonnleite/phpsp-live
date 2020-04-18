@@ -1,0 +1,18 @@
+language: php
+
+php:
+  - 7.4
+
+before_install:
+  - travis_retry composer self-update
+
+install:
+  - travis_retry composer install --no-interaction --prefer-source --dev
+
+script:
+  - bin/phpcs --standard=PSR12 src
+
+matrix:
+  allow_failures:
+    - php: hhvm
+  fast_finish: true
