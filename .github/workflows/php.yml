@@ -14,9 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate
-
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
 
@@ -25,3 +22,6 @@ jobs:
 
     - name: Check Code Style
       run: php bin/phpcs --standard=PSR12 src
+      
+    - name: Check phpstan
+      run: php bin/phpstan analyse src
