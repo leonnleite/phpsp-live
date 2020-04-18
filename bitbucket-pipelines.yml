@@ -1,0 +1,11 @@
+image: chialab/php-dev:7.4-apache
+pipelines:
+  default:
+    - step:
+        script:
+          - composer install -n
+          - bin/phpstan analyse src
+          - php bin/phpcs --standard=PSR12 src
+          - bin/phpunit
+          - bin/phpunit --coverage-clover var/clover
+          - php bin/coverage.php var/clover 10
