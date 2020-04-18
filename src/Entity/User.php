@@ -36,6 +36,7 @@ class User
     public function addRole(Role $role): User
     {
         array_push($this->roles, $role);
+        return $this;
     }
 
     public function getId(): UuidInterface
