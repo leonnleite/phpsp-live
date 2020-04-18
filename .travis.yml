@@ -10,5 +10,5 @@ install:
   - travis_retry composer install --no-interaction --prefer-source --dev
 
 script:
-  - bin/phpcs --standard=PSR12 src
-  - bin/phpstan analyse src
+  - php bin/phpcs --standard=PSR12 src
+  - php bin/phpstan analyse src
