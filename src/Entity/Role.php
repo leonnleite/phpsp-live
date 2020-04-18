@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Entity;
-
 
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
@@ -29,6 +27,4 @@ class Role
     {
         return $this->name;
     }
-
-
 }
