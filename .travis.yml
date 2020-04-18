@@ -11,8 +11,3 @@ install:
 
 script:
   - bin/phpcs --standard=PSR12 src
-
-matrix:
-  allow_failures:
-    - php: hhvm
-  fast_finish: true
