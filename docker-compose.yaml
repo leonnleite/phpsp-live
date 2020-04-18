@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+    phpsp-live:
+        image: chialab/php-dev:7.4-apache
+        container_name: phpsp-live
+        ports:
+            - 80:80
+        volumes:
+            - .:/var/www
+            - ./public:/var/www/html
+        networks:
+            - phpsp
+networks:
+  phpsp:
+    driver: bridge
