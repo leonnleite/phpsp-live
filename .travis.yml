@@ -11,6 +11,4 @@ install:
 
 script:
   - bin/phpcs --standard=PSR12 src
-  - bin/phpunit --coverage-clover var/clover
-  - php bin/coverage.php var/clover 10
   - bin/phpstan analyse src
